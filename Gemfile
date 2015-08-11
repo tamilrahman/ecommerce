@@ -32,6 +32,18 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# use mongodb for database
+gem 'mongoid', '~> 4.0.2'
+gem 'bson_ext'
+
+#use slim for html template
+gem "slim-rails"
+
+#bootstarp for frontend css framework
+gem "twitter-bootstrap-rails"
+gem "therubyracer"
+gem "less-rails"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
