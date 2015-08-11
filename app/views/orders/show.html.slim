@@ -1,0 +1,28 @@
+h1 Your Order
+
+table.table
+  tr
+    th Customer
+    td = @order.user_id
+  tr
+    th Status:
+    td = @order.status
+  tr
+    th Items:
+    td = @order.order_items.count
+table.table
+  tr
+    th Items
+    th Title
+    th Quantity
+    th Unit Price
+    th Subtotal
+    th
+    - @order.order_items.each do |item|
+    	tr
+	    	td
+	    	td = item.product.title
+	    	td = item.quantity
+	    	td = print_price(item.product.price)
+	    	td = 
+	    	td = link_to 'Destroy', item, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-default"
