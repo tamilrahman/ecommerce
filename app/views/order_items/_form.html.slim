@@ -5,13 +5,7 @@
       ul
         - @order_item.errors.full_messages.each do |message|
           li = message
-
-  .field
-    = f.label :product_id
-    = f.number_field :product_id
-  .field
-    = f.label :order_id
-    = f.number_field :order_id
+          
   .field
     = f.label :quantity
     = f.number_field :quantity

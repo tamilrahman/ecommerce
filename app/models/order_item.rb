@@ -7,5 +7,5 @@ class OrderItem
 
   field :product_id, type: BSON::ObjectId
   field :order_id, type: BSON::ObjectId
-  field :quantity, type: Integer
+  field :quantity, type: Integer, default: 1
 end

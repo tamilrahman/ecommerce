@@ -16,13 +16,18 @@ table.table
     th Title
     th Quantity
     th Unit Price
-    th Subtotal
     th
     - @order.order_items.each do |item|
     	tr
 	    	td
 	    	td = item.product.title
-	    	td = item.quantity
+	    	td = link_to item.quantity, edit_order_item_path(item)
 	    	td = print_price(item.product.price)
-	    	td = 
 	    	td = link_to 'Destroy', item, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-default"
+	tr
+		th Total cost:
+		td = print_price(subtotal(@order))
+
+br
+= link_to 'Continue Shopping', root_path, class: "btn btn-primary"
+| &nbsp &nbsp
