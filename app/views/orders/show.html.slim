@@ -3,7 +3,7 @@ h1 Your Order
 table.table
   tr
     th Customer
-    td = @order.user_id
+    td = @order.user.name if @order.user
   tr
     th Status:
     td = @order.status

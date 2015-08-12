@@ -80,19 +80,4 @@ class OrderItemsController < ApplicationController
     def order_item_params
       params.require(:order_item).permit(:product_id, :order_id, :quantity)
     end
-
-    def load_order
-      if session[:order_id].nil?
-        @order = Order.create(status: "unsubmitted")
-        session[:order_id] = @order.id.to_s
-      else
-        @order = Order.find_or_initialize_by(id: session[:order_id]) unless session[:order_id].include? "$oid"
-        @order = Order.find_or_initialize_by(id: session[:order_id]["$oid"]) if session[:order_id].include? "$oid"
-        if @order.new_record?
-          @order.status = "unsubmitted"
-          @order.save!
-          session[:order_id] = @order.id
-        end
-      end
-    end
 end

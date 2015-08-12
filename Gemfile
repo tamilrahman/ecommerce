@@ -36,16 +36,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'mongoid', '~> 4.0.2'
 gem 'bson_ext'
 
-#use slim for html template
+# use slim for html template
 gem "slim-rails"
 
-#bootstarp for frontend css framework
+# bootstarp for frontend css framework
 gem "twitter-bootstrap-rails"
 gem "therubyracer"
 gem "less-rails"
 
-# Use authentication and authorization
-gem 'devise'
+# Login with twitter
+gem "omniauth-twitter"
 
 group :development, :test do
 	gem "better_errors"
@@ -57,11 +57,5 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-  gem 'capistrano',         require: false
-  gem 'capistrano-rvm',     require: false
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
 end
 
